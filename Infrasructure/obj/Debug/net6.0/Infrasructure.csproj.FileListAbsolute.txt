@@ -1,0 +1,17 @@
+F:\URLShortner\Infrasructure\bin\Debug\net6.0\Infrasructure.deps.json
+F:\URLShortner\Infrasructure\bin\Debug\net6.0\Infrasructure.runtimeconfig.json
+F:\URLShortner\Infrasructure\bin\Debug\net6.0\Infrasructure.dll
+F:\URLShortner\Infrasructure\bin\Debug\net6.0\Infrasructure.pdb
+F:\URLShortner\Infrasructure\bin\Debug\net6.0\Domain.dll
+F:\URLShortner\Infrasructure\bin\Debug\net6.0\Domain.pdb
+F:\URLShortner\Infrasructure\obj\Debug\net6.0\Infrasructure.csproj.AssemblyReference.cache
+F:\URLShortner\Infrasructure\obj\Debug\net6.0\Infrasructure.GeneratedMSBuildEditorConfig.editorconfig
+F:\URLShortner\Infrasructure\obj\Debug\net6.0\Infrasructure.AssemblyInfoInputs.cache
+F:\URLShortner\Infrasructure\obj\Debug\net6.0\Infrasructure.AssemblyInfo.cs
+F:\URLShortner\Infrasructure\obj\Debug\net6.0\Infrasructure.csproj.CoreCompileInputs.cache
+F:\URLShortner\Infrasructure\obj\Debug\net6.0\Infrasructure.csproj.CopyComplete
+F:\URLShortner\Infrasructure\obj\Debug\net6.0\Infrasructure.dll
+F:\URLShortner\Infrasructure\obj\Debug\net6.0\refint\Infrasructure.dll
+F:\URLShortner\Infrasructure\obj\Debug\net6.0\Infrasructure.pdb
+F:\URLShortner\Infrasructure\obj\Debug\net6.0\Infrasructure.genruntimeconfig.cache
+F:\URLShortner\Infrasructure\obj\Debug\net6.0\ref\Infrasructure.dll
