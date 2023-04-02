@@ -1,0 +1,60 @@
+<div class="outer">
+  <div>
+    <nav class="mb-2 pt-2">
+      <ul class="nav">
+        <li class="">
+          <button class="btn btn-primary" (click)="toHome()">Home</button>
+        </li>
+        <li class="">
+          <button class="btn btn-primary" (click)="toAbout()">About</button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="#">
+        <div class="panel border bg-white">
+          <div class="panel-heading">
+            <h1 class="pt-3 font-weight-bold fs-3">Sign up</h1>
+          </div>
+          <div class="panel-body p-3">
+            <form [formGroup]="signupForm">
+              <div class="form-group pt-3">
+                <div class="input-field">
+                  <span class="fa fa-user p-2"></span>
+                  <input formControlName="username" type="text" placeholder="Username">
+                </div>
+              </div>
+              <small *ngIf="signupForm.controls['username'].dirty && signupForm.hasError('required', 'username')"
+                class="text-danger">Username is required</small>
+              <div class="form-group pt-3">
+                <div class="input-field">
+                  <span class="fa fa-envelope p-2"></span>
+                  <input formControlName="email" type="text" placeholder="Email">
+                </div>
+              </div>
+              <small *ngIf="signupForm.controls['email'].dirty && signupForm.hasError('required', 'email')"
+                class="text-danger">Email is required</small>
+              <div class="form-group pt-3">
+                <div class="input-field">
+                  <span class="fa fa-lock p-2"></span>
+                  <input formControlName="password" [type]="type" placeholder="Password">
+                  <span (click)="hideShowPass()" class="fa {{eyeIcon}}"></span>
+                </div>
+              </div>
+              <div class="d-flex justife-content-center">
+                <small *ngIf="signupForm.controls['password'].dirty && signupForm.hasError('required', 'password')"
+                  class="text-danger">Password is required</small>
+                <button (click)="onSignup()" [disabled]="signupForm.invalid" type="submit"
+                  class="btn btn-primary btn-block mt-4 w-100">Sign up</button>
+              </div>
+              <div class="text-center pt-3 text-muted">Already have account?<a class="mx-1" id="Forget"
+                  routerLink="/login">Login</a></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

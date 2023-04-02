@@ -1,0 +1,41 @@
+<div class="outer">
+    <div class="container-home">
+      <nav class="mb-2 pt-2">
+        <ul class="nav">
+            <li class="">
+                <button class="btn btn-primary" (click)="toHome()">Home</button>
+            </li>
+          <li class="">
+            <button class="btn btn-primary" (click)="toAbout()">About</button>
+          </li>
+          <li class="nav-item d-inline-flex">
+            <div *ngIf="isAuthorized(); then signoutButton else loginButton"></div>
+      
+            <ng-template #loginButton>
+              <button (click)="logInRedirect()" class="btn btn-primary">Log in</button>
+            </ng-template>
+      
+            <ng-template #signoutButton>
+              <button (click)="logOut()" class="btn btn-primary">Sign out</button>
+            </ng-template>
+      
+          </li>
+        </ul>
+      </nav>
+    <div class="container">
+        <div class="project-description text-center">
+            <h1>About</h1>
+            <div class="container wrapper-about">
+                <h4 class="wrapper-about">{{ description }}</h4>
+            </div>
+            <div class="container-about-form" [hidden]="!isAdmin()">
+                <div class="row">
+                    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                        <textarea class="about-form" formControlName="description"></textarea>
+                    </form>
+                    <button (click)="onSubmit()" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

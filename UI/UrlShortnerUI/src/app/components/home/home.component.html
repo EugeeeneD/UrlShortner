@@ -1,0 +1,84 @@
+<div class="outer">
+  <div class="container-home">
+    <nav class="mb-2 pt-2">
+      <ul class="nav">
+        <li class="">
+          <button class="btn btn-primary" (click)="toHome()">Home</button>
+        </li>
+        <li class="">
+          <button class="btn btn-primary" (click)="toAbout()">About</button>
+        </li>
+        <li class="nav-item d-inline-flex">
+          <div *ngIf="isAuthorized(); then signoutButton else loginButton"></div>
+
+          <ng-template #loginButton>
+            <button (click)="logInRedirect()" class="btn btn-primary">Log in</button>
+          </ng-template>
+
+          <ng-template #signoutButton>
+            <button (click)="logOut()" class="btn btn-primary">Sign out</button>
+          </ng-template>
+
+        </li>
+      </ul>
+    </nav>
+    <div class="container-home">
+      <div class="container-home-main ">
+        <div class="container bg-white">
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8, box-shadow-none">
+            <ng-container matColumnDef="Shortened">
+              <th mat-header-cell *matHeaderCellDef> Shortened </th>
+              <td mat-cell *matCellDef="let element">
+                <a href="{{element.shortened}}">{{ element.shortened }}</a>
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="LongUrl">
+              <th mat-header-cell *matHeaderCellDef> LongUrl </th>
+              <td mat-cell *matCellDef="let element" class="wrapper-about wrapper"> {{element.longUrl}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Action">
+              <th mat-header-cell *matHeaderCellDef [hidden]="!isAuthorized()"> Action </th>
+              <td mat-cell *matCellDef="let element" [hidden]="!isAuthorized()">
+                <button mat-stroked-button (click)="getUrlInfo(element)" [hidden]="false" color="primary">Info</button>
+                <button mat-stroked-button (click)="deleteShortenedUrl(element)" [hidden]="!isVisible(element)"
+                  color="warn">Delete</button>
+              </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+            </tr>
+          </table>
+        </div>
+        <div class="container bg-white">
+          <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="container-addUrl" [hidden]="!isAuthorized()">
+      <h2 class="pt-3 font-weight-bold text-center">New url</h2>
+      <div class="d-flex justify-content-center">
+        <div class="panel-body p-3 bg-white container-width">
+          <form [formGroup]="createUrlForm">
+            <div class="form-group pt-3">
+              <div class="input-field">
+                <input formControlName="Url" type="text" placeholder="Url">
+              </div>
+              <small *ngIf="createUrlForm.controls['Url'].dirty && createUrlForm.hasError('required', 'Url')"
+                class="text-danger fs-6">Url is required</small>
+            </div>
+          </form>
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <button (click)="addNewUrl()" [disabled]="createUrlForm.invalid" [disabled]="isAuthorized()" type="submit"
+              class="btn btn-primary ">Add new url</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

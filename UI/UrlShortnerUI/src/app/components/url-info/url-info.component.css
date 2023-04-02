@@ -1,0 +1,30 @@
+table {
+    width: 100%;
+  }
+
+nav{
+  display: flex;
+  justify-content: right;
+  padding-right: 200px;
+}
+
+.box-shadow-none{
+  box-shadow: none;
+}
+
+.container-home-main{
+  display: block;
+}
+
+.container-width{
+  width: 500px;
+}
+
+.wrapper-about{
+  max-width: 500px;
+}
+
+.wrapper{
+  overflow: auto;
+  word-wrap: break-word;
+}

@@ -1,0 +1,41 @@
+.container-about-form{
+    color: black; 
+    opacity: 1; 
+    resize: none; 
+    width: 100%;
+}
+
+.about-form{
+    background-color: white;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+  }
+
+nav{
+  display: flex;
+  justify-content: right;
+  padding-right: 200px;
+}
+
+.box-shadow-none{
+  box-shadow: none;
+}
+
+.container-home-main{
+  display: block;
+}
+
+.container-width{
+  width: 500px;
+}
+
+.card{
+    max-width: 500px;
+}
+
+.wrapper-about{
+  max-width: 500px;
+}

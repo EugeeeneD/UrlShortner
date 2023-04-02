@@ -1,0 +1,14 @@
+.wrapper-about{
+    max-width: 500px;
+  }
+  
+  .wrapper{
+    overflow: auto;
+    word-wrap: break-word;
+  }
+  
+  nav{
+    display: flex;
+    justify-content: right;
+    padding-right: 200px;
+  }

@@ -1,0 +1,62 @@
+<div class="outer">
+  <div class="container-home">
+    <nav class="mb-2 pt-2">
+      <ul class="nav">
+        <li class="">
+          <button class="btn btn-primary" (click)="toHome()">Home</button>
+        </li>
+        <li class="">
+          <button class="btn btn-primary" (click)="toAbout()">About</button>
+        </li>
+        <li class="nav-item d-inline-flex">
+          <div *ngIf="isAuthorized(); then signoutButton else loginButton"></div>
+
+          <ng-template #loginButton>
+            <button (click)="logInRedirect()" class="btn btn-primary">Log in</button>
+          </ng-template>
+
+          <ng-template #signoutButton>
+            <button (click)="logOut()" class="btn btn-primary">Sign out</button>
+          </ng-template>
+
+        </li>
+      </ul>
+    </nav>
+
+    <div class="text-center">
+      <h1>Url info</h1>
+    </div>
+    <div class="container">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="Id">
+          <th mat-header-cell *matHeaderCellDef> Id </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="LongUrl">
+          <th mat-header-cell *matHeaderCellDef> LongUrl </th>
+          <td mat-cell *matCellDef="let element" class="wrapper wrapper-about"> {{element.longUrl}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Shortened Url">
+          <th mat-header-cell *matHeaderCellDef> Shortened Url</th>
+          <td mat-cell *matCellDef="let element"> {{element.shortened}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Date of creation">
+          <th mat-header-cell *matHeaderCellDef> Date of creation </th>
+          <td mat-cell *matCellDef="let element"> {{element.dateOfCreation}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Owner id">
+          <th mat-header-cell *matHeaderCellDef> Owner id</th>
+          <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </div>
+</div>
