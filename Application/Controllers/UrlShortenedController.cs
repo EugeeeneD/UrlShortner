@@ -97,8 +97,9 @@ namespace Application.Controllers
             if (url == null)
                 return NotFound();
 
-            if (!(url.UserId != userId || role != "admin"))
-                return Forbid();
+            if (role != "admin")
+                if(url.UserId != userId)
+                    return Forbid();
 
             if (!await _shortenedUrlRepository.DeleteShortnedUrlAsync(url))
                 return StatusCode(500, new { Message = "Something happen during url remove" });
