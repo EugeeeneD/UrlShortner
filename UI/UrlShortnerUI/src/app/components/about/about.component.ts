@@ -13,7 +13,7 @@ import { Route, Router } from '@angular/router';
 export class AboutComponent implements OnInit {
 
   // could be easily obtained from web api
-  description: string = "Algorithm: on serverside each url gets GUID(globally unique identifier) after this you can navigete throw /navigate/ endpoint just with eding shortened site guid.";
+  description: string = "Algorithm: on serverside each url gets GUID(globally unique identifier) after this you can navigate through /navigate/ endpoint just with ading shortened site guid.";
   form!: FormGroup;
   constructor(private auth: AuthService, private toast: ToastrService, private router: Router){}
 

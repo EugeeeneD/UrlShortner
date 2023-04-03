@@ -11,7 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TokenInterceptor } from './interceptors/token.interceptor';
-import { MaterialModule } from '../app/material-modele';
+import { MaterialModule } from './material-module';
 import { UrlInfoComponent } from './components/url-info/url-info.component';
 import { AboutComponent } from './components/about/about.component';
 import { DescriptionComponent } from './components/about/description/description.component';

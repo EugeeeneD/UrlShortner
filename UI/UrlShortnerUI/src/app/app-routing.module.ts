@@ -12,7 +12,8 @@ const routes: Routes = [
   {path:'signup', component: SignupComponent},
   {path:'home', component: HomeComponent},
   {path:'url-info', component: UrlInfoComponent, canActivate:[AuthGuard]},
-  {path:'about', component: AboutComponent}
+  {path:'about', component: AboutComponent},
+  {path:'**', redirectTo: 'home'}
 ];
 
 @NgModule({
