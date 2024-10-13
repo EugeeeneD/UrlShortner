@@ -1,4 +1,4 @@
-### Test assignments for entry level job.
+### Test assignment for entry level job.
 __Description__: 
 > We need to build URL Shortener. The goals are to create an application that will shorten
 any URL and to have possibility to navigate by this short equivalent.
